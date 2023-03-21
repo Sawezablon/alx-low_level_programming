@@ -6,10 +6,6 @@
  */
 int main(void)
 {
-<<<<<<< HEAD
-	_putchar(ch);
-	putchar('\n');
-=======
 	char ch[] = "_putchar";
 	int i = 0;
 
@@ -19,7 +15,6 @@ int main(void)
 		i++;
 	}
 	_putchar('\n');
->>>>>>> refs/remotes/origin/master
 
 	return (0);
 }
