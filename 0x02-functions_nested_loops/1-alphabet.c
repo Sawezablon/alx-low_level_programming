@@ -5,7 +5,7 @@
   * Description: print lowercase using _putchar function
   * Return: Always 0
   */
-void main(void)
+void print_alphabet(void)
 {
 	char ch = 'a';
 
