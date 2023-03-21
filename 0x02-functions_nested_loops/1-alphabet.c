@@ -7,10 +7,9 @@
   */
 int main(void)
 {
-	char ch[] = "a";
-	int i = 0;
+	char ch = 'a';
 
-	while(ch[i] <= 'z')
+	while(ch <= 'z')
 	{
 		_putchar(ch);
 		ch++;
