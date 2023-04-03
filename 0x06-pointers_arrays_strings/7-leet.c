@@ -8,16 +8,16 @@
  */
 char *leet(char *c)
 {
-	int a, b;
-	char ch[] = "aAeEoOtTlL";
-	char ar[] = "4433007711";
+	int i, j;
+	char d[] = "aAeEoOtTlL";
+	char ab[] = "4433007711";
 
 	for (a = 0 ; *(c + a); a++)
 	{
 		for (b = 0 ; b <= 9 ; b++)
 		{
-			if (ch[b] == c[a])
-				c[a] = ar[b];
+			if (d[b] == c[a])
+				c[a] = ab[b];
 		}
 	}
 	return (c);
