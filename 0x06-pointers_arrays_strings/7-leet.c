@@ -10,14 +10,14 @@ char *leet(char *c)
 {
 	int i, j;
 	char d[] = "aAeEoOtTlL";
-	char ab[] = "4433007711";
+	char ch[] = "4433007711";
 
-	for (a = 0 ; *(c + a); a++)
+	for (i = 0 ; *(c + i); i++)
 	{
-		for (b = 0 ; b <= 9 ; b++)
+		for (j = 0 ; j <= 9 ; j++)
 		{
 			if (d[b] == c[a])
-				c[a] = ab[b];
+				c[a] = ch[b];
 		}
 	}
 	return (c);
