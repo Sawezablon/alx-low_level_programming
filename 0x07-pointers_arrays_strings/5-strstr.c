@@ -3,7 +3,7 @@
 
 /**
   * _strstr - function that locates a substring.
-  * @haystact: a string to be scanned
+  * @haystack: a string to be scanned
   * @needle: a small string to be used to scan
   *
   * Return: a pointer to the beginning of the located substring
