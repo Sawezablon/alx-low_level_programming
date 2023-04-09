@@ -1,6 +1,6 @@
-#include <stdio.h>
-#include <stdlib.h>
 #include "main.h"
+#include <stdlib.h>
+#include <stdio.h>
 
 /**
   * main - Entry point
@@ -13,13 +13,18 @@ int main(int argc, char *argv[])
 {
 	int i;
 
-	i = 0;
-	while (argv[0][i] != '\0')
-	{
-		_putchar(argv[0][i]);
-		i++;
-	}
-	_putchar('\n');
+	(void)i;
+	(void)argc;
+	/**
+	  *i = 0;
+	  *while (argv[0][i] != '\0')
+	  *{
+	  *	_putchar(argv[0][i]);
+	  *	i++;
+	  *}
+	  *_putchar('\n');
+	  */
+	printf("%s\n", argv[0]);
 
 	return (0);
 }
