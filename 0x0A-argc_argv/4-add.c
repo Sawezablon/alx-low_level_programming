@@ -1,6 +1,7 @@
 #include "main.h"
 #include <stdlib.h>
 #include <stdio.h>
+#include <ctype.h>
 
 /**
   * main - Entry point
@@ -22,7 +23,7 @@ int main(int argc, char *argv[])
 	while (i < argc)
 	{
 		num = atoi(argv[i]);
-		if ((num == 0 && argv[i][0] != '0') || (num < 0))
+		if (!isdigit(argv[i][0]))
 		{
 			printf("Error\n");
 			return (1);
