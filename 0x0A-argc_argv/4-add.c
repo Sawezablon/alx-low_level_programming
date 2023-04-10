@@ -13,8 +13,7 @@
 int main(int argc, char *argv[])
 {
 	int add = 0;
-	int i;
-	int num;
+	int i, z;
 
 	i = 1;
 	if (argc == 1)
@@ -22,13 +21,15 @@ int main(int argc, char *argv[])
 
 	while (i < argc)
 	{
-		num = atoi(argv[i]);
-		if (!isdigit(argv[i][0]))
+		for (z = 0; argv[i][z] != '\0'; z++)
 		{
-			printf("Error\n");
-			return (1);
+			if (!isdigit(argv[i][z]))
+			{
+				printf("Error\n");
+				return (1);
+			}
 		}
-		add += num;
+		add += atoi(argv[i]);
 		i++;
 	}
 	printf("%d\n", add);
