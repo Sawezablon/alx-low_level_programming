@@ -16,9 +16,6 @@ int main(int argc, char *argv[])
 	int i, z;
 
 	i = 1;
-	if (argc == 1)
-		printf("0\n");
-
 	while (i < argc)
 	{
 		for (z = 0; argv[i][z] != '\0'; z++)
