@@ -33,15 +33,15 @@ char *str_concat(char *s1, char *s2)
 		return (NULL);
 
 	x = 0;
-	d = 0;
+	z = 0;
 	while (c < (i + j + 1))
 	{
 		if (c < i)
-			str[c] = s1[c];
+			str[z] = s1[x];
 		else
-			str[c] = s2[d];
-		c++;
-		d++;
+			str[x] = s2[z];
+		x++;
+		z++;
 	}
 
 	return (str);
