@@ -34,10 +34,10 @@ char *str_concat(char *s1, char *s2)
 
 	x = 0;
 	z = 0;
-	while (c < (i + j + 1))
+	while (x < (i + j + 1))
 	{
-		if (c < i)
-			str[z] = s1[x];
+		if (x < i)
+			str[x] = s1[x];
 		else
 			str[x] = s2[z];
 		x++;
