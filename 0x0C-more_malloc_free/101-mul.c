@@ -21,19 +21,6 @@ int is_number(char *num)
 }
 
 /**
-  * multiply - Entry block
-  * @num1: parameter
-  * @num2: parameter
-  * Return: result
-  */
-int multiply(char *num1, char *num2)
-{
-	int mul;
-
-	mul = atoi(num1) * atoi(num2);
-	return (mul);
-}
-/**
   * main - Entry block
   * @argc: argument count
   * @argv: string pointer
@@ -43,7 +30,7 @@ int main(int argc, char **argv)
 {
 	char *num1;
 	char *num2;
-	int res;
+	int mul;
 
 	if (argc != 3)
 	{
@@ -59,8 +46,8 @@ int main(int argc, char **argv)
 		printf("Error\n");
 		exit(98);
 	}
-	res = multiply(num1, num2);
-	printf("%d\n", res);
+	mul = atoi(num1) * atoi(num2);
+	printf("%d\n", mul);
 
 	return (0);
 }
