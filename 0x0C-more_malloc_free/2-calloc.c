@@ -22,7 +22,7 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 	if (ptr == NULL)
 		return (NULL);
 
-	for(z = 0; z < (nmemb * size); z++)
+	for (z = 0; z < (nmemb * size); z++)
 		*(ptr + z) = 0;
 
 	return (ptr);
