@@ -30,9 +30,9 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		return (NULL);
 	y = 0;
 	z = 0;
-	while (y < (i + n))
+	while (y < (w + n))
 	{
-		if (y < i)
+		if (y < w)
 			ptr[y] = s1[y];
 		else
 			ptr[y] = s2[z++];
