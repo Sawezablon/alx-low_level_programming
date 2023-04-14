@@ -1,86 +1,81 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "main.h"
-#include <ctype.h>
-#include <string.h>
 
 /**
- * is_digit - Entry point
- * @s: parameter
+ * isDigit - checks if a string contains a non-digit char
+ * @str: string to be evaluated
  *
- * Return: 0 or 1
+ * Return: 0 if a non-digit is found, 1 otherwise
  */
-int is_digit(char *s)
+int isDigit(char *str)
 {
-	int i = 0;
-
-	while (s[i])
-	{
-		if (s[i] < '0' || s[i] > '9')
+	for (int i = 0; str[i]; i++)
+		if (str[i] < '0' || str[i] > '9')
 			return (0);
-		i++;
-	}
 	return (1);
 }
 
 /**
- * _strlen - Entry point
- * @s: parameter
+ * length - returns the length of a string
+ * @str: string to evaluate
  *
- * Return: length
+ * Return: the length of the string
  */
-int _strlen(char *s)
+int length(char *str)
 {
-	int i = 0;
+	int i;
 
-	while (s[i] != '\0')
-	{
-		i++;
-	}
+	for (i = 0; str[i] != '\0'; i++)
+		;
 	return (i);
 }
 
 /**
- * main - Entry point
- * @argc: parameter
- * @argv: parameter
+ * handleError - handles errors for main
+ */
+void handleError(void)
+{
+	printf("Error\n");
+	exit(98);
+}
+
+/**
+ * main - multiplies two positive numbers
+ * @argc: number of arguments
+ * @argv: array of arguments
  *
- * Return: 0 (Success)
+ * Return: always 0 (Success)
  */
 int main(int argc, char *argv[])
 {
-	char *s1, *s2;
-	int len1, len2, len, i, carry, digit1, digit2, *res, a = 0;
+	if (argc != 3 || !isDigit(argv[1]) || !isDigit(argv[2]))
+		handleError();
 
-	s1 = argv[1], s2 = argv[2];
-	if (argc != 3 || !is_digit(s1) || !is_digit(s2))
-	{
-		printf("Error\n");
-		exit(98);
-	}
-	len1 = _strlen(s1);
-	len2 = _strlen(s2);
-	len = len1 + len2 + 1;
-	res = malloc(sizeof(int) * len);
+	char *num1 = argv[1], *num2 = argv[2];
+	int len1 = length(num1), len2 = length(num2);
+	int len = len1 + len2 + 1, carry, digit1, digit2, *res, a = 0;
+
+	res = calloc(len, sizeof(int));
 	if (!res)
 		return (1);
-	for (i = 0; i <= len1 + len2; i++)
-		res[i] = 0;
-	for (len1 = len1 - 1; len1 >= 0; len1--)
+
+	for (int i = len1 - 1; i >= 0; i--)
 	{
-		digit1 = s1[len1] - '0';
+		digit1 = num1[i] - '0';
 		carry = 0;
-		for (len2 = _strlen(s2) - 1; len2 >= 0; len2--)
+		for (int j = len2 - 1; j >= 0; j--)
 		{
-			digit2 = s2[len2] - '0';
-			carry += res[len1 + len2 + 1] + (digit1 * digit2);
-			res[len1 + len2 + 1] = carry % 10;
+			digit2 = num2[j] - '0';
+			carry += res[i + j + 1] + (digit1 * digit2);
+			res[i + j + 1] = carry % 10;
 			carry /= 10;
 		}
 		if (carry > 0)
-			res[len1 + len2 + 1] += carry;
+			res[i] += carry;
 	}
-	for (i = 0; i < len - 1; i++)
+
+	for (int i = 0; i < len - 1; i++)
 	{
 		if (res[i])
 			a = 1;
@@ -90,6 +85,8 @@ int main(int argc, char *argv[])
 	if (!a)
 		putchar('0');
 	putchar('\n');
+
 	free(res);
 	return (0);
 }
+
