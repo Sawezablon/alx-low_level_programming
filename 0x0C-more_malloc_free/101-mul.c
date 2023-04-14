@@ -1,53 +1,30 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <ctype.h>
-
+#include "main.h"
 /**
-  * is_number - Entry block
-  * @num: parameter
-  * Return: 1
-  */
-int is_number(char *num)
+* main - multiply 2 numbers as arguments
+* @argc: number of arguments
+* @argv: arguments
+* Return: 0 success
+*/
+int main(int argc, char *argv[])
 {
-	while (*num != '\0')
-	{
-		if (!isdigit(*num))
-		{
-			return (0);
-		}
-		num++;
-	}
-	return (1);
-}
-
-/**
-  * main - Entry block
-  * @argc: argument count
-  * @argv: string pointer
-  * Return: 98 or 0
-  */
-int main(int argc, char **argv)
-{
-	char *num1;
-	char *num2;
-	int mul;
-
+unsigned long mul;
+int i, j;
 	if (argc != 3)
+	{ printf("Error\n");
+	exit(98); }
+	for (i = 1; i < argc; i++)
 	{
-		printf("Error\n");
-		exit(98);
+		for (j = 0; argv[i][j] != '\0'; j++)
+		{
+			if (argv[i][j] > 57 || argv[i][j] < 48)
+			{  printf("Error\n");
+			exit(98); }
+		}
+
 	}
-
-	num1 = argv[1];
-	num2 = argv[2];
-
-	if (!is_number(num1) || !is_number(num2))
-	{
-		printf("Error\n");
-		exit(98);
-	}
-	mul = atoi(num1) * atoi(num2);
-	printf("%d\n", mul);
-
-	return (0);
+	mul = atol(argv[1]) *  atol(argv[2]);
+	printf("%lu\n", mul);
+return (0);
 }
