@@ -30,7 +30,7 @@ int main(int argc, char **argv)
 {
 	char *num1;
 	char *num2;
-	int mul;
+	unsigned int mul;
 
 	if (argc != 3)
 	{
