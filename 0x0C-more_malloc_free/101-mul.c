@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "main.h"
+#include "holberton.h"
 /**
 * main - multiply 2 numbers as arguments
 * @argc: number of arguments
@@ -22,25 +22,6 @@ int i, j;
 			{  printf("Error\n");
 			exit(98); }
 		}
-<<<<<<< HEAD
-=======
-		num++;
-	}
-	return (1);
-}
-
-/**
-  * main - Entry block
-  * @argc: argument count
-  * @argv: string pointer
-  * Return: 98 or 0
-  */
-int main(int argc, char **argv)
-{
-	char *num1;
-	char *num2;
-	unsigned int mul;
->>>>>>> 19f3ad3c2b717293be99c1725e4f9307fa78361f
 
 	}
 	mul = atol(argv[1]) *  atol(argv[2]);
