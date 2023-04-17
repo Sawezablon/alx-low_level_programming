@@ -1,6 +1,6 @@
 #include "dog.h"
 #include <stdlib.h>
-#include <stdio.h>
+
 /**
  * free_dog - Entry point
  * @d: first element
@@ -10,7 +10,11 @@
 
 void free_dog(dog_t *d)
 {
-	free(d->name);
-	free(d->owner);
-	free(d);
+	if (d != NULL)
+	{
+		free(d->name);
+		free(d->owner);
+
+		free(d);
+	}
 }
