@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 /**
   * init_dog - entry point
@@ -10,7 +11,10 @@
   */
 void init_dog(struct dog *d, char *name, float age, char *owner)
 {
-	d.name = name;
-	d.email = email;
-	d.age = age;
+	if (d != NULL)
+	{
+		d->name = name;
+		d->email = email;
+		d->age = age;
+	}
 }
