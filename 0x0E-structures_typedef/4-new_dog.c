@@ -1,25 +1,44 @@
 #include "dog.h"
 #include <stdlib.h>
 #include <stdio.h>
+#include <string.h>
 
 /**
-  * new_dog - Entry point
-  * @name: parameter
-  * @age: parameter
-  * @owner: parameter
-  *
-  * Return: success (0)
-  */
+ * new_dog - Entry point that create new dog
+ * @name: first member
+ * @age: Second memmber
+ * @owner: Third member
+ * Return: pointer
+ */
 dog_t *new_dog(char *name, float age, char *owner)
 {
-	dog_t *my_dog;
+	dog_t *dog;
+	int i;
+	int j;
 
-	my_dog = malloc(sizeof(dog_t));
-	if (my_dog == NULL)
+	dog = malloc(sizeof(dog_t));
+	if (dog == NULL)
 		return (NULL);
-	my_dog->name = name;
-	my_dog->age = age;
-	my_dog->owner = owner;
 
-	return (my_dog);
+	i = strlen(name);
+	j = strlen(owner);
+
+	dog->name = malloc(sizeof(char) * (i + 1));
+	if (dog->name == NULL)
+		return (NULL);
+
+	dog->owner = malloc(sizeof(char) * (j + 1));
+	if (dog->owner == NULL)
+	{
+		free(dog);
+		free(dog->name);
+		return (NULL);
+	}
+
+	strcpy(dog->name, name);
+	strcpy(dog->owner, owner);
+	dog->age = age;
+
+	return (dog);
 }
+
