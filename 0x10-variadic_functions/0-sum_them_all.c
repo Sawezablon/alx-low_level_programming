@@ -11,7 +11,8 @@ int sum_them_all(const unsigned int n, ...)
 {
 	va_list zab;
 
-	unsigned int z, int add;
+	unsigned int z;
+	int add;
 
 	va_start(zab, n);
 
