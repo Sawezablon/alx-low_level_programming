@@ -3,7 +3,10 @@
 #include <stdarg.h>
 
 /**
-  *
+  * print_numbers - print all numbers
+  * @separator: parameter
+  * @n: parameter
+  * Return: Nothing
   */
 void print_numbers(const char *separator, const unsigned int n, ...)
 {
