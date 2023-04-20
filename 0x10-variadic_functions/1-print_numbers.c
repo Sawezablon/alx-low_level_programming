@@ -14,10 +14,10 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 
 	va_list zab;
 
-	va_start(zab, n);
-
 	if (separator == NULL)
 		return;
+
+	va_start(zab, n);
 	z = 0;
 	while (z < n)
 	{
