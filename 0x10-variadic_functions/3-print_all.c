@@ -15,7 +15,6 @@ void print_all(const char * const format, ...)
 	int i_val;
 	float f_val;
 	char *s_val, *separator = "";
-	char *nil_str = "(nil)";
 	int i = 0;
 
 	va_start(arg, format);
@@ -38,11 +37,12 @@ void print_all(const char * const format, ...)
 			case 's':
 				s_val = va_arg(arg, char*);
 				if (s_val == NULL)
-					printf("%s%s", separator, nil_str);
+					s_val = "(nil)";
 				printf("%s%s", separator, s_val);
 				break;
 			default:
-				break;
+				i++;
+				continue;
 		}
 		separator = ", ";
 		i++;
