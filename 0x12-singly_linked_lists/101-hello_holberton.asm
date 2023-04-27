@@ -1,24 +1,16 @@
-extern printf ; add this line to the top of your file
+	SECTION .data
+msg:	db "Hello, Holberton", 0
+fmt:	db "%s", 10, 0
 
-section .data
-    message db "Hello, Holberton", 10, 0 ; define the message string
-
-section .text
-    global main ; the entry point for our program
-
+	SECTION .text
+	extern printf
+	global main
 main:
-    ; set up the stack frame
-    push rbp
-    mov rbp, rsp
+	mov esi, msg
+	mov edi, fmt
+	mov eax, 0
+	call printf
 
-    ; prepare arguments for printf
-    mov rdi, message
-    xor eax, eax
-
-    ; call printf
-    call printf
-
-    ; restore the stack frame and return
-    mov rsp, rbp
-    pop rbp
-    ret
+	mov eax, 0
+	ret
+	
