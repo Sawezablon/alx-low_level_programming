@@ -1,7 +1,10 @@
 #include "lists.h"
 
 /**
-  *
+  * delete_nodeint_at_index - function that deletes the node at index 
+  * @head: pointer to a pointer
+  * @index: index to be deleted
+  * Return: -1 or 1 if succeeded
   */
 int delete_nodeint_at_index(listint_t **head, unsigned int index)
 {
@@ -18,7 +21,7 @@ int delete_nodeint_at_index(listint_t **head, unsigned int index)
 		zab++;
 	}
 
-	if ((index != 0 && node->next == NULL) || node == NULL)
+	if (index != 0 && node == NULL)
 		return (-1);
 
 	temp = node->next;
