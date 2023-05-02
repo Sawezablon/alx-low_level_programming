@@ -7,7 +7,7 @@
   * Return: pointer head
   */
 listint_t *reverse_listint(listint_t **head)
-
+{
 	listint_t *temp;
 	listint_t *new;
 
@@ -16,8 +16,8 @@ listint_t *reverse_listint(listint_t **head)
 
 	while (*head != NULL)
 	{
-		new = *head->next;
-		*head->next = temp;
+		new = (*head)->next;
+		(*head)->next = temp;
 		temp = *head;
 		*head = new;
 	}
