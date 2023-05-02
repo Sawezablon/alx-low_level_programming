@@ -14,14 +14,11 @@ int delete_nodeint_at_index(listint_t **head, unsigned int index)
 
 	node = *head;
 
-	if (index != 0)
+	zab = 1;
+	while (node != NULL && zab < index)
 	{
-		zab = 1;
-		while (node != NULL && zab < index)
-		{
-			node = node->next;
-			zab++;
-		}
+		node = node->next;
+		zab++;
 	}
 
 	if ((index != 0 && node->next == NULL) || node == NULL)
