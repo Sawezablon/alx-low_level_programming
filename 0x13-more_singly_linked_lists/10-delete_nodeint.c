@@ -21,7 +21,7 @@ int delete_nodeint_at_index(listint_t **head, unsigned int index)
 		zab++;
 	}
 
-	if (index != 0 && node == NULL)
+	if ((index != 0 && node->next == NULL) || node == NULL)
 		return (-1);
 
 	temp = node->next;
