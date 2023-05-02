@@ -33,8 +33,8 @@ int delete_nodeint_at_index(listint_t **head, unsigned int index)
 	}
 	else
 	{
-		*head = temp;
 		free(node);
+		*head = temp;
 	}
 
 	return (1);
