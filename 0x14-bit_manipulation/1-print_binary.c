@@ -1,7 +1,9 @@
 #include "main.h"
 
 /**
-  *
+  * print_binary - function that prints the binary representation
+  * @n: parameter
+  * Return: Nothing
   */
 void print_binary(unsigned long int n)
 {
@@ -20,8 +22,7 @@ void print_binary(unsigned long int n)
 			z = i * 2;
 			if (z == n || z + 1 == n)
 				break;
-			else
-				i++;
+			i++;
 		}
 		if (i * 2 == n)
 		{
