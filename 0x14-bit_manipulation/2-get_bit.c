@@ -10,6 +10,9 @@ int get_bit(unsigned long int n, unsigned int index)
 {
 	unsigned int k, i = 0;
 
+	if (n == 0)
+		return (0);
+
 	while (i <= index)
 	{
 		k = n % 2;
