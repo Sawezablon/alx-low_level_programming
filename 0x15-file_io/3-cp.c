@@ -3,13 +3,13 @@
 
 /**
  * cp_file - copies content from one file to another.
- * @file_from: source file descriptor.
+ * @file_frm: source file descriptor.
  * @file_to: destination file descriptor.
- * @file_from_name: source file name.
- * @file_to_name: destination file name.
+ * @file_frm_nme: source file name.
+ * @file_to_nme: destination file name.
  * Return: no return.
  */
-void cp_file(int file_from, int file_to, char *file_from_name, char *file_to_name)
+void cp_file(int file_frm, int file_to, char *file_frm_nme, char *file_to_nme)
 {
 	ssize_t ch, wrt;
 	char zab[MAXSIZE];
@@ -18,24 +18,24 @@ void cp_file(int file_from, int file_to, char *file_from_name, char *file_to_nam
 	ch = 1024;
 	while (ch == 1024)
 	{
-		ch = read(file_from, zab, 1024);
+		ch = read(file_frm, zab, 1024);
 		if (ch == -1)
 		{
-			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", file_from_name);
+			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", file_frm_nme);
 			exit(98);
 		}
 		wrt = write(file_to, zab, ch);
 		if (wrt == -1)
 		{
-			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file_to_name);
+			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file_to_nme);
 			exit(99);
 		}
 	}
 
-	err_close = close(file_from);
+	err_close = close(file_frm);
 	if (err_close == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", file_from);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", file_frm);
 		exit(100);
 	}
 
