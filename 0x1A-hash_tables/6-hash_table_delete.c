@@ -1,17 +1,17 @@
 #include "hash_tables.h"
 
 /**
-  * hash_table_delete - function that prints a hash table.
-  * @ht: is the hash table
-  * Return: Nothing
-  */
+* hash_table_delete - function that prints a hash table.
+* @ht: is the hash table
+* Return: Nothing
+*/
 void hash_table_delete(hash_table_t *ht)
 {
 	hash_table_t *head = ht;
 	hash_node_t *ptr, *str;
 	unsigned long int i;
 
-    i = 0;
+		i = 0;
 	while (i < ht->size)
 	{
 		if (ht->array[i] != NULL)
@@ -26,7 +26,7 @@ void hash_table_delete(hash_table_t *ht)
 				ptr = str;
 			}
 		}
-        i++;
+		i++;
 	}
 	free(head->array);
 	free(head);
